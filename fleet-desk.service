@@ -1,0 +1,14 @@
+[Unit]
+Description=Fleet Desk (Node + JSON database)
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/fleet-desk
+ExecStart=/usr/bin/node src/server.js
+Restart=always
+RestartSec=3
+User=fleet
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
